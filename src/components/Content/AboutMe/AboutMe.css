@@ -1,0 +1,67 @@
+.aboutMe {
+    display: flex;
+    flex-grow: 1;
+    float: 1;
+    align-items: center;
+    width: 100%;
+}
+
+.aboutMe__img {
+    display: flex;
+    flex: 0.3;
+    max-width: 260px;
+    padding: 10px;
+}
+
+.aboutMe__details {
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+}
+
+.aboutMe__card {
+    height: 100%;
+    width: 100%;
+}
+
+
+.aboutMe__greeting {
+    font-size: 50px;
+}
+
+.aboutMe__cardContent {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.aboutMe__picture {
+    border-radius: 50%;
+    width: 100%;
+}
+
+
+@media (max-width:990px) {
+    .aboutMe {
+      flex-direction: column;
+    }
+    .aboutMe__cardContent {
+        align-items: center;
+       font-size: 15px;
+    }
+
+    .aboutMe__greeting {
+        text-align: center;
+    }
+
+    .aboutMe__cardContent > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+       
+    }
+
+
+  }
+
+
