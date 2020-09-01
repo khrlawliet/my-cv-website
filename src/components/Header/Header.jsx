@@ -6,12 +6,12 @@ function Header() {
     return (
         <header className="header">
             <div>
-            <h1>Kervin Rey H. Balibagoso</h1>
+            <a href="/" className="header__name">Kervin Rey H. Balibagoso</a>
             <h4>Software Developer</h4>
             </div>
             <nav>
                 <ul className="nav__links">
-                    <li><a href="/Services">Services</a></li>
+                    <li><a href="/Employees">Employee</a></li>
                     <li><a href="/Projects">Project</a></li> 
                     <li><a href="/About">About</a></li>
                 </ul>

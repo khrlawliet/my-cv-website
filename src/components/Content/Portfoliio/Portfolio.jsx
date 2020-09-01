@@ -10,8 +10,8 @@ const Portfolio = () => {
             <br/>
             <div className="portfolio__cat">
             <Category title = "Basic"/>
-            {/* <Category title = "Intermediate"/> */}
-            {/* <Category title = "Advance"/> */}
+            <Category title = "Intermediate"/>
+            <Category title = "Advance"/>
             </div>
             
         </div>

@@ -8,7 +8,7 @@
 }
 
 
-li, a, button, h1, h2 {
+ li, a, button, h1, h2 {
     font-family: "Montsarrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
@@ -25,8 +25,9 @@ h1 {
     color: white;
 }
 
-
-
+ .header__name {
+    cursor: pointer;
+}
 
 .header {
     display: flex;
@@ -38,9 +39,6 @@ h1 {
 }
 
 
-.logo {
-    cursor: pointer;
-}
 
 .nav__links {
     list-style: non;
@@ -59,7 +57,7 @@ h1 {
 color :#0088a9;
 }
 
-button {
+.header button {
     padding: 9px 25px;
     background-color: rgba(0,136,168.1);
     border: none;
@@ -71,6 +69,16 @@ button {
 
 button:hover {
     background-color: rgba(0,136,168.0.8);
+
+}
+
+
+@media(max-width:900px) {
+    .header button {
+        padding: 2px 10px;
+        width: 100px;
+        height: 30px;
+    }
 
 }
 

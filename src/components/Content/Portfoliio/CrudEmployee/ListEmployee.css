@@ -1,0 +1,14 @@
+.listEmployee {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.listEmployee__buttons {
+    display: flex;
+}
+
+.listEmployee  h2 {
+    color:black;
+}

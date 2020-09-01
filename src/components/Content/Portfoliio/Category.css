@@ -17,7 +17,7 @@
 .category__proj {
     display: flex;
     justify-content: space-evenly;
-      width: 100%;
+      width: 150px;
 }
 
 .basic__projects {

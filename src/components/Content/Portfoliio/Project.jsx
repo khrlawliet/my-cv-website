@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import './Project.css';
-import RpsGame from './RpsGame/RpsGame';
+import { useHistory } from "react-router";
 
-const Project = ({ image, title, description, isDialog, project }) => {
+
+const Project = ({ image, title, description, isDialog, project, uri }) => {
 
     const [showDialog, setShowDialog] = useState(false);
     const [modalClassName, setModalClassName] = useState("project__modal");
+    const history = useHistory();
 
     const displayModal = () => {
         if (isDialog) {
             setShowDialog(true);
             setModalClassName("project__modal");
+        } else {
+            history.push(uri);
         }
     }
 
