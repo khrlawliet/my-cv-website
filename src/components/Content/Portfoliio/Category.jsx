@@ -1,13 +1,16 @@
 import React from 'react';
 import './Category.css';
-import RpsLogo from './../../../assets/RpsImages/paper.jpg';
-import ExpenseTrackerLogo from './../../../assets/RpsImages/rock.jpg';
-import CovidTrackerLogo from './../../../assets/RpsImages/scissors.jpg';
-import EmployeeCrudLogo from './../../../assets/RpsImages/paper.jpg';
+import RpsLogo from './../../../assets/CardImages/rpsgame.png';
+import ExpenseTrackerLogo from './../../../assets/CardImages/expense-tracker.png';
+import CovidTrackerLogo from './../../../assets/CardImages/covid-19.jpg';
+import BlackJackGameLogo from './../../../assets/CardImages/black-jack.jpg';
+import EmployeeCrudLogo from './../../../assets/CardImages/employee.png';
+import SlackCloneLogo from './../../../assets/CardImages/slack-clone.png';
+import PageAppLogo from './../../../assets/CardImages/page-app-logo.png'; 
 import RpsGame from './RpsGame/RpsGame';
 import ExpenseTracker from './ExpenseTracker/ExpenseTracker';
 import CovidTracker from './CovidTracker/CovidTracker';
-import EmployeeList from './CrudEmployee/ListEmployee';
+import BlackJackGame from './BlackJackGame/BlackJackGame';
 
 import Project from './Project';
 
@@ -25,15 +28,20 @@ const projType = (title) => {
             return (
                 <>
                     <Project image={CovidTrackerLogo} title="Covid-19 Tracker" description="Live Covid-19 Tacker Worldwide" project={<CovidTracker />} isDialog />
+                    <Project image={BlackJackGameLogo} title="Black Jack Game" description="Play Black Jack Game Online" project={<BlackJackGame />} isDialog />
                 </>
             )
         case 'Advance':
             return (
                 <>
-                    <Project image={EmployeeCrudLogo} title="Employee CRUD" description="Full Stack Web Development with Spring Boot Backend" project={<EmployeeList />} uri="/Employees" />
-                    <Project image={EmployeeCrudLogo} title="Employee CRUD" description="Full Stack Web Development with Spring Boot Backend" project={<EmployeeList />} uri="/Employees" />
+                    <Project image={EmployeeCrudLogo} title="Employee CRUD" description="Full Stack Web Development with Spring Boot Backend" uri="/employees" />
+                    <Project image={SlackCloneLogo} title="Slack Clone" description="Slack clone with Firebase Backend and Google Authentication" url="https://kaibal-tech-slack-clone.web.app/" />
+                    <Project image={PageAppLogo} title="Page Application" description="Full Stack Desktop Application with JavaFX and Hibernate" url="https://drive.google.com/file/d/1yCcGlHcQFZu6hpymUwmurxj4C448cOqA/view?usp=sharing"  />
                 </>
             )
+
+             default :
+                return null;
     }
 }
 

@@ -92,12 +92,10 @@ const RpsGame = () => {
                             <div>
                                 <div className="rpsgame__human">
                                     <img src={imgHuman} className="rpsgame__imgHuman" alt="" />
-                                    <h2>Your Score:{humanScore}</h2>
                                 </div>
                                 <h1 style={{ color: prompt.color }}>{prompt.message}</h1>
                                 <div className="rspgame__bot">
                                     <img src={imgBot} className="rpsgame__imgBot" alt="" />
-                                    <h2>Bot Score : {botScore}</h2>
                                 </div>
                             </div>
                         )
@@ -105,8 +103,10 @@ const RpsGame = () => {
 
             </div>
             <div className="rpsgame__button">
+            <h2>Your Score : {humanScore}</h2>
                 <button className="rpsgame__btnNew" onClick={()=>newGame(false)}>New</button>
                 <button className="rpsgame__btnReset"  onClick={()=>newGame(true)}> Reset</button>
+                <h2>Bot Score : {botScore}</h2>
             </div>
         </div>
     )

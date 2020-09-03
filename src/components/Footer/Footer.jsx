@@ -12,13 +12,13 @@ function Footer() {
                     <p>
                         &copy;{new Date().getFullYear()} | KaiBal Tech | All right reserved
                 </p>
-                <div className="footer_icons">
-                    <FacebookIcon />
-                    <InstagramIcon />
-                    <LinkedInIcon />
+                <div className="footer__icons">
+                    <FacebookIcon onClick={() => window.open('https://web.facebook.com/KhRLawliet/')} />
+                    <InstagramIcon onClick={() => window.open('https://www.instagram.com/khrlawliet/')}/>
+                    <LinkedInIcon onClick={() => window.open('https://www.linkedin.com/in/kervin-rey-balibagoso-074463199/')}/>
                 </div>
 
-
+                
         </div>
     )
 }

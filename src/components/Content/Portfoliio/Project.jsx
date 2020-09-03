@@ -3,7 +3,7 @@ import './Project.css';
 import { useHistory } from "react-router";
 
 
-const Project = ({ image, title, description, isDialog, project, uri }) => {
+const Project = ({ image, title, description, isDialog, project, uri, url }) => {
 
     const [showDialog, setShowDialog] = useState(false);
     const [modalClassName, setModalClassName] = useState("project__modal");
@@ -14,20 +14,30 @@ const Project = ({ image, title, description, isDialog, project, uri }) => {
             setShowDialog(true);
             setModalClassName("project__modal");
         } else {
-            history.push(uri);
+            if(uri) {
+                history.push(uri);
+            } else {
+                window.open(url, "_blank")}
+            }
+            
         }
-    }
 
     const closeDialog = () => {
         setModalClassName("modal__close");
     }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === "Escape") {
+            closeDialog();
+        }
+    });
 
     return (
         <div className="project" >
             <img src={image} alt="" />
             <h1>{title}</h1>
             <h3>{description}</h3>
-            <button onClick={displayModal}>View</button>
+            <button onClick={displayModal} className="btn__view">View</button>
 
             {showDialog ? (
                 <div className={modalClassName}>

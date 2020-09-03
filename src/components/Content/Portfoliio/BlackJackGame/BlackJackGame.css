@@ -1,0 +1,46 @@
+.blackJack {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blackjack__body {
+    display: flex;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.blackjack__body > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 10px;
+    border: 1px solid black;
+    width: 100%;
+    max-width: 50%;
+    height: 500px;
+    
+}
+
+.blackjack__btn > button {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+}
+
+.blackjack__card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.blackjack__card img {
+    margin: 10px;
+    border : 1px solid black;
+}
+
+
+

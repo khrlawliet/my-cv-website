@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import EmployeeService from './EmployeeService';
 import './ListEmployee.css';
 import { useHistory } from "react-router";
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
 
 const ListEmployee = () => {
 
@@ -9,7 +18,7 @@ const ListEmployee = () => {
     const [search, setSearch] = useState("");
     const history = useHistory();
 
-   
+
 
 
     useEffect(() => {
@@ -36,7 +45,7 @@ const ListEmployee = () => {
     }
 
     const addEmployee = (id) => {
-        history.push(`/add-employee/add`);
+        history.push(`/add-employee/_add`);
     }
 
     const searchEmployee = (event) => {
@@ -52,53 +61,67 @@ const ListEmployee = () => {
         }
     )
 
+    const StyledTableRow = withStyles((theme) => ({
+        root: {
+          '&:nth-of-type(odd)': {
+            backgroundColor: theme.palette.action.hover,
+          },
+        },
+      }))(TableRow);
+
+      const StyledTableCell = withStyles((theme) => ({
+        head: {
+          backgroundColor: theme.palette.common.black,
+          color: theme.palette.common.white,
+        },
+        body: {
+          fontSize: 14,
+        },
+      }))(TableCell);
+
     return (
         <div className="listEmployee">
-            <h2>Employee List</h2>
+            <h1>Employee List</h1>
+            <hr/>
             <div className="listEmployee__content">
                 <input placeholder="Search..." name="Search" className="listEmployee__search"
                     onChange={(e) => searchEmployee(e)} value={search}></input>
             </div>
-            <div className="row">
-                <table className="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th> First Name</th>
-                            <th> Last Name</th>
-                            <th> Email Id</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        {
-                            filteredEmployees.map(
+            <TableContainer component={Paper}>
+                <Table className="table__bot" aria-label="customized table">
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell align="center">Firstname</StyledTableCell>
+                            <StyledTableCell align="center">Lastname</StyledTableCell>
+                            <StyledTableCell align="center">Email</StyledTableCell>
+                            <StyledTableCell align="center">Action</StyledTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {filteredEmployees.map((
                                 employee =>
-                                    <tr key={employee.id}>
-                                        <td>{employee.firstName}</td>
-                                        <td>{employee.lastName}</td>
-                                        <td>{employee.emailId}</td>
-                                        <td>
-                                            <div className="listEmployee__buttons">
-                                                <button onClick={() => editEmployee(employee.id)} className="btn btn-info">Update</button>
-                                                <button style={{ marginLeft: '10px' }} onClick={() => deleteEmployee(employee.id)} className="btn btn-danger">Delete</button>
-                                                <button style={{ marginLeft: '10px' }} onClick={() => viewEmployee(employee.id)} className="btn btn-info">View</button>
-                                            </div>
-                                        </td>
-                                    </tr>
-                            )
-                        }
-
-
-                    </tbody>
-                </table>
-
-            </div>
-            <div className="row">
-                <button className="btn btn-primary" onClick={addEmployee}>Add Employee</button>
+                            <StyledTableRow key={employee.id}>
+                              
+                                <StyledTableCell align="center">{employee.firstName}</StyledTableCell>
+                                <StyledTableCell align="center">{employee.lastName}</StyledTableCell>
+                                <StyledTableCell align="center">{employee.emailId}</StyledTableCell>
+                                <StyledTableCell align="right">
+                                    <div className="listEmployee__btn">
+                                    <Button color="primary" variant="contained" onClick={() => editEmployee(employee.id)} className="btn__update">Update</Button>
+                                                <Button color="secondary" variant="contained" style={{ marginLeft: '10px' }} onClick={() => deleteEmployee(employee.id)} className="btn__delete">Delete</Button>
+                                                <Button color="default" variant="contained" style={{ marginLeft: '10px' }} onClick={() => viewEmployee(employee.id)} className="btn__view">View Details</Button>
+                                    </div>               
+                                </StyledTableCell>
+                            </StyledTableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+            <div className="btnAdd">
+                <Button color="primary" variant="contained" onClick={addEmployee}>Add Employee</Button>
             </div>
 
-           
+
         </div>
     )
 }

@@ -40,6 +40,18 @@
     width: 100%;
 }
 
+.aboutMe__cardContent > div > .MuiSvgIcon-root {
+    font-size : 30px;
+    padding: 2px;
+}
+
+.aboutMe__cardContent > div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
 
 @media (max-width:990px) {
     .aboutMe {
@@ -58,8 +70,11 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        text-align: center;
        
     }
+
+   
 
 
   }
