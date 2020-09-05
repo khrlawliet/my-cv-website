@@ -43,8 +43,14 @@
     transform: rotateZ(180deg);
   }
 
-  @media (max-width:1200px) {
+  @media (max-width:900px) {
     .img-slider { 
      max-width: 300px;
+    }
+  }
+
+  @media (max-width:1800px) {
+    .img-slider { 
+     max-width: 500px;
     }
   }

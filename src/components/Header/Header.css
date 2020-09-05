@@ -39,6 +39,10 @@ a:hover{
     border-bottom: 1px #444 solid;
 }
 
+.button.primary {
+    cursor: pointer;
+}
+
 .header__menu {
     display: flex;
     flex-wrap: wrap;

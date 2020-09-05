@@ -27,7 +27,7 @@
 
 .blackjack__btn > button {
     padding: 10px;
-    margin-right: 10px;
+    margin: 5px;
     border: 1px solid black;
 }
 
@@ -41,6 +41,40 @@
     margin: 10px;
     border : 1px solid black;
 }
+
+
+@media(max-width:900px) {
+    .blackjack__body  {
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     margin: 2px;
+    }
+
+    .blackjack__body > div {
+        max-width: 100%;
+       }
+
+       #your-box img {
+        margin: 10px;
+        width: 70px;
+        height: 70px;
+       }
+
+       #dealer-box img{
+        margin: 10px;
+        width: 70px;
+        height: 70px;
+       }
+       .blackjack__body > div {
+ 
+        height: 400px;
+        
+    }
+
+    
+}
+
 
 
 

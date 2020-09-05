@@ -26,7 +26,24 @@ const BlackJackGame = () => {
         setResult({ 'wins': 0, 'draws': 0, 'losses': 0 });
     }, [])
 
-    useEffect(()=> {
+    useEffect(() => {
+        const dealerLogic = async () => {
+            while (botData['score'] < 16 &&
+                isStand) {
+                let card = randomCard();
+                showCard(card, botData);
+                updateScore(card, botData);
+                showScore(botData);
+                await new Promise(resolve =>
+                    setTimeout(resolve, 1000)
+                );
+            }
+            setTurnsOver(true);
+            let winner = computeWinner();
+            showResult(winner);
+            setIsStand(false);
+        }
+
         dealerLogic();
     }, [isStand])
 
@@ -82,7 +99,6 @@ const BlackJackGame = () => {
 
     const blackjackDeal = () => {
         if (turnsOver) {
-            setIsStand(false);
             let yourImages = document.querySelector('#your-box').querySelectorAll('img');
             let dealerImages = document.querySelector('#dealer-box').querySelectorAll('img');
             for (let i = 0; i < yourImages.length; i++) {
@@ -105,22 +121,6 @@ const BlackJackGame = () => {
 
     }
 
-    const dealerLogic = async () => {
-        while (botData['score'] < 16 &&
-            isStand) {
-            let card = randomCard();
-            showCard(card, botData);
-            updateScore(card, botData);
-            showScore(botData);
-            await new Promise(resolve =>
-                setTimeout(resolve, 1000)
-            );
-        }
-        setTurnsOver(true);
-        let winner = computeWinner();
-        showResult(winner);
-
-    }
 
     const computeWinner = () => {
         let winner;
@@ -189,7 +189,7 @@ const BlackJackGame = () => {
             </div>
             <div className="blackjack__btn">
                 <Button color="primary" variant="contained" className="btn__hit" onClick={blackjackHit} >Hit</Button>
-                <Button color="default" variant="contained" className="btn__deal" onClick={()=>setIsStand(true)}>Deal</Button>
+                <Button color="default" variant="contained" className="btn__deal" onClick={() => setIsStand(true)}>Deal</Button>
                 <Button color="secondary" variant="contained" className="btn__stand" onClick={blackjackDeal}>Stand</Button>
             </div>
             <div className="blackjack__result">

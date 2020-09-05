@@ -14,6 +14,7 @@ import git from "../../../assets/TechImages/git-logo.png";
 import spring from "../../../assets/TechImages/spring-boot-logo.png";
 import maven from "../../../assets/TechImages/maven-logo.png";
 import javafx from "../../../assets/TechImages/javafx-logo.png";
+import heroku from "../../../assets/TechImages/heroku-logo.png";
 
 import './Language.css';
 
@@ -36,6 +37,7 @@ export const Language = () => {
                 <img className="img" src={tortoiseHG}  alt=""/>
                 <img className="img" src={github}  alt=""/>
                 <img className="img" src={firebase}  alt=""/>
+                <img className="img" src={heroku}  alt=""/>
                 <img className="img" src={mysql}  alt=""/>
                 <img className="img" src={jasperReport}  alt=""/>
               </div>
@@ -53,6 +55,7 @@ export const Language = () => {
                 <img className="img" src={tortoiseHG}  alt=""/>
                 <img className="img" src={github}  alt=""/>
                 <img className="img" src={firebase}  alt=""/>
+                <img className="img" src={heroku}  alt=""/>
                 <img className="img" src={mysql}  alt=""/>
                 <img className="img" src={jasperReport}  alt=""/>
               </div>

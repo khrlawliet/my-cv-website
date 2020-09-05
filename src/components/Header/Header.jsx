@@ -38,9 +38,9 @@ function Header() {
                 <nav>
                     <ul className="header__menu">
                         <li className="header__logo"><a href="/">Kervin Rey H. Balibagoso</a><a href="/"><h2>Software Developer</h2></a></li>
-                        <li className="header__item"><a href="/Employees">About Me</a></li>
+                        <li className="header__item"><a href="/about-me">About Me</a></li>
                         <li className="header__item"><a href="/krbalibagoso-resume.pdf" download>Resume</a></li>
-                        <li className="header__item button primary"><a onClick={displayModal}>Contact</a></li>
+                        <li className="header__item button primary"><a href ="#" onClick={displayModal}>Contact</a></li>
                         <li className="header__toggle" onClick={toggle}><span className="header__bars"></span></li>
                     </ul>
                 </nav>

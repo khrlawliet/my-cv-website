@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 
-const EMPLOYEE_API_BASE_URL = "/api/v1/employees";
+const EMPLOYEE_API_BASE_URL = "https://spring-boot-employee-backend.herokuapp.com/api/v1/employees";
+// const EMPLOYEE_API_BASE_URL = "/api/v1/employees";
+
 
 class EmployeeService {
 
@@ -26,19 +28,19 @@ class EmployeeService {
     }
 
     getEmployeeTasks(employeeId) {
-        return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId + "/tasks");
+        return axios.get(EMPLOYEE_API_BASE_URL + '/' + employeeId + '/tasks');
     }
 
     createEmployeeTask(employeeId, task) {
-        return axios.post(EMPLOYEE_API_BASE_URL + '/' + employeeId + "/tasks", task);
+        return axios.post(EMPLOYEE_API_BASE_URL + '/' + employeeId + '/tasks', task);
     }
 
     deleteEmployeeTask(employeeId, taskId) {
-        return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId + "/tasks" + '/' + taskId)
+        return axios.delete(EMPLOYEE_API_BASE_URL + '/' + employeeId + '/tasks/' +  taskId)
     }
 
     updateEmployeeTask(employeeId, taskId, task) {
-        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId + "/tasks" + '/' + taskId, task);
+        return axios.put(EMPLOYEE_API_BASE_URL + '/' + employeeId + "/tasks/"  + taskId, task);
     }
 
 

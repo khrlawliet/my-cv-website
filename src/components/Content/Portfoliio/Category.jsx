@@ -27,7 +27,7 @@ const projType = (title) => {
         case 'Intermediate':
             return (
                 <>
-                    <Project image={CovidTrackerLogo} title="Covid-19 Tracker" description="Live Covid-19 Tacker Worldwide" project={<CovidTracker />} isDialog />
+                    <Project image={CovidTrackerLogo} title="Covid-19 Tracker" description="Live Covid-19 Tracker Worldwide(REST API)" project={<CovidTracker />} isDialog />
                     <Project image={BlackJackGameLogo} title="Black Jack Game" description="Play Black Jack Game Online" project={<BlackJackGame />} isDialog />
                 </>
             )

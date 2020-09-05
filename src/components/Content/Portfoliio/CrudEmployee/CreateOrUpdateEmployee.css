@@ -46,4 +46,6 @@
     flex-direction: row-reverse;
     justify-items: left;
     align-content: flex-end;
+    width: 30%;
+    margin-left: auto;
 }
